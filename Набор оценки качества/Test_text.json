@@ -1,0 +1,694 @@
+{
+    "documents": [
+    {
+      "document_id": "3-D Convolution-Recurrent Networks for Spectral-Spatial Classification of Hyperspectral Images.pdf",
+      "text": "Nowadays, 3-D convolutional neural networks (3-D CNN) have attracted lots of attention in the spectral-spatial classification of hyperspectral imageries (HSI). In this model, the feed-forward processing structure reduces the computational burden of 3-D structural processing. However, this model as a vector-based methodology cannot analyze the full content of the HSI information, and as a result, its features are not quite discriminative. On the other hand, convolutional long short-term memory (CLSTM) can recurrently analyze the 3-D structural data to extract more discriminative and abstract features. However, the computational burden of this model as a sequence-based methodology is extremely high.To comprehensively assess the performance of the proposed model, three different types of publicly available hyperspectral datasets, Indian Pines, University of Pavia, and Salinas, were chosen and are described next. To comprehensively qualify the performance of the PRCLSTM model, four classification metrics, namely Overall Accuracy (OA), Kappa Coefficient (κ), Average Accuracy (AA), and Test Error (TE), are used in this study. However, for the Salinas dataset, the 3-D-CNN-LSTM performs relatively better than the PRCLSTM in terms of the OA for the 3 × 3 window size, but the PRCLSTM still shows the lowest TE, guaranteeing a better generalization capacity for our model. These results indicate that the proposed model performs better in the various sizes of input cubes compared to the convolutional feed-forward-based models, thanks to the use of a convolutional recurrent structure to capture the spatial information of data.",
+      "annotations": [
+        {
+          "entity": "3-D convolutional neural networks",
+          "type": "Method",
+          "start": 1,
+          "end": 4
+        },
+        {
+          "entity": "3-D CNN",
+          "type": "Method",
+          "start":  5,
+          "end": 6
+        }
+        ,
+        {
+          "entity": "spectral-spatial classification",
+          "type": "Task",
+          "start":  14,
+          "end": 15
+        }
+        ,
+        {
+          "entity": "convolutional long short-term memory",
+          "type": "Method",
+          "start":  65,
+          "end": 68
+        }
+        ,
+        {
+          "entity": "CLSTM",
+          "type": "Method",
+          "start":  69,
+          "end":69
+        }
+        ,
+        {
+          "entity": "Indian Pines",
+          "type": "Datasets",
+          "start":  114,
+          "end":115
+        }
+        ,
+        {
+          "entity": "University of Pavia",
+          "type": "Datasets",
+          "start":  116,
+          "end":118
+        }
+        ,
+        {
+          "entity": "Salinas",
+          "type": "Datasets",
+          "start":  120,
+          "end":120
+        }
+        ,
+        {
+          "entity": "PRCLSTM",
+          "type": "Method",
+          "start":  134,
+          "end":134
+        }
+        ,
+        {
+          "entity": "Overall Accuracy (OA)",
+          "type": "Metric",
+          "start": 140,
+          "end": 142
+        }
+        ,
+        {
+          "entity": "Kappa Coefficient (κ)",
+          "type": "Metric",
+          "start":  142,
+          "end":145
+        }
+        ,
+        {
+          "entity": "Average Accuracy (AA)",
+          "type": "Metric",
+          "start":  146,
+          "end":148
+        }
+        ,
+        {
+          "entity": " Test Error (TE)",
+          "type": "Metric",
+          "start":  150,
+          "end":152
+        }
+        
+                ,
+        {
+          "entity": "3-D-CNN-LSTM",
+          "type": "Method",
+          "start":  164,
+          "end":164
+        }
+        ,
+        {
+          "entity": "PRCLSTM",
+          "type": "Method",
+          "start":  170,
+          "end":170
+        }
+        ,
+        {
+          "entity": "OA",
+          "type": "Metric",
+          "start": 175,
+          "end": 175
+        }
+        ,
+        {
+          "entity": "PRCLSTM",
+          "type": "Method",
+          "start":  185,
+          "end":185
+        }
+        ,
+        {
+          "entity": "TE",
+          "type": "Metric",
+          "start":  190,
+          "end":190
+        }
+        ,
+        {
+          "entity": "the convolutional feed-forward-based models",
+          "type": "Method",
+          "start":  217,
+          "end":220
+        }
+
+      ]
+    },
+{
+  "document_id": "Semi-supervised learning for hyperspectral image classification.pdf",
+  "text": "Semi-supervised learning (SSL) focuses on the way to improve learning efficiency through the use of labeled and unlabeled samples concurrently. However, recent research indicates that the classification performance might be deteriorated by the unlabeled samples. Here, we proposed a novel graph-based semi-supervised algorithm combined with particle cooperation and competition, which can improve the model performance effectively by using unlabeled samples. From the obtained results on three public datasets, our proposal shows great hyperspectral image classification performance when compared to traditional graph-based SSL algorithms. The PCC mechanism classifies the samples in the graph nodes by the corresponding particles who walk in the graph. Indian Pines image was the first and famous testing data for hyperspectral image classification, which was obtained by AVIRIS sensors in 1992. The image of Indian Pines includes 145 × 145 pixels and 220 spectral bands covering the range of 0.4 to 2.5 µm, which shows a mixed agricultural/forest area in northwestern Indiana, America. In 2003, the ROSIS sensor collected the Pavia University scene. The scene of Pavia University includes 610 × 340 pixels and consists of 103 spectral bands with the wavelength varying with 0.43 to 0.86 µm. The Salinas image was collected in Salinas Valley, California, USA by AVIRIS. The image of Salinas included 512 × 217 pixels and 224 spectral bands. Those bands that were absorbed by water were discarded in our experiments. Three evaluation criteria were adopted to judge the effectiveness of each model. Overall Accuracy, OA The overall classification accuracy can visually display the classification results by counting the number of samples classified correctly. AA is equal to OA when the number of each class is equal to each other. With the purpose of estimating the performance of our proposed CLPPCC algorithm, several related algorithms were used for comparative experiments such as TSVM, LGC, and LPA. To highlight the importance of the novel graph construction approach on the increased classification performance, we also compared the performance of our proposal and label propagation algorithm combined with particle competition and cooperation (LPAPCC), which do not use the novel graph construction to construct the graph, that is, LPA was only optimized by particle competition and cooperation. Here, AA, OA, and kappa coefficient were introduced as evaluation criteria to assess the effectiveness of the models here.",
+  "annotations": [
+    {
+      "entity": "Semi-supervised learning",
+      "type": "Method",
+      "start": 0,
+      "end": 1
+    },
+    {
+      "entity": "SSL",
+      "type": "Method",
+      "start": 2,
+      "end": 2
+    },
+    {
+      "entity": "graph-based SSL algorithms",
+      "type": "Method",
+      "start": 80,
+      "end": 82
+    },
+    {
+      "entity": "hyperspectral image classification",
+      "type": "Task",
+      "start": 72,
+      "end": 74
+    },
+    {
+      "entity": "Indian Pines",
+      "type": "Datasets",
+      "start": 127,
+      "end": 128
+    },
+    {
+      "entity": "Indian Pines",
+      "type": "Datasets",
+      "start": 102,
+      "end": 103
+    },
+    {
+      "entity": "Pavia University",
+      "type": "Datasets",
+      "start": 169,
+      "end": 170
+    },
+    {
+      "entity": "Salinas",
+      "type": "Datasets",
+      "start": 192,
+      "end": 192
+    },
+    {
+      "entity": "Overall Accuracy (OA)",
+      "type": "Metric",
+      "start": 240,
+      "end": 242
+    },
+    {
+      "entity": "AA",
+      "type": "Metric",
+      "start": 261,
+      "end": 261
+    },
+    {
+      "entity": "OA",
+      "type": "Metric",
+      "start": 265,
+      "end": 265
+    },
+    {
+      "entity": "CLPPCC algorithm",
+      "type": "Method",
+      "start": 287,
+      "end": 288
+    },
+    {
+      "entity": "TSVM",
+      "type": "Method",
+      "start": 299,
+      "end": 299
+    },
+    {
+      "entity": "LGC",
+      "type": "Method",
+      "start": 300,
+      "end": 300
+    },
+    {
+      "entity": "LPA",
+      "type": "Method",
+      "start": 302,
+      "end": 302
+    },
+    {
+      "entity": "LPAPCC",
+      "type": "Method",
+      "start": 336,
+      "end": 336
+    },
+    {
+      "entity": "LPA",
+      "type": "Method",
+      "start": 351,
+      "end": 351
+    },
+    {
+      "entity": "AA",
+      "type": "Metric",
+      "start": 361,
+      "end": 361
+    }
+    ,
+    {
+      "entity": "OA",
+      "type": "Metric",
+      "start": 362,
+      "end": 362
+    },
+    {
+      "entity": "kappa coefficient",
+      "type": "Metric",
+      "start": 364,
+      "end": 365
+    }
+  ]
+},
+{
+  "document_id": "De Backer и др. - 2005 - A Band Selection Technique for Spectral Classification.pdf",
+  "text": "The method is applicable as a band reduction technique, but it can as well serve the purpose of data interpretation or be an aid in sensor design. Results on a vegetation classification task show an improvement in classification performance over feature selection and other band selection techniques.",
+  "annotations": [
+    {
+      "entity": "band reduction technique",
+      "type": "Method",
+      "start": 6,
+      "end": 8
+    },
+    {
+      "entity": "vegetation classification",
+      "type": "Task",
+      "start": 30,
+      "end": 31
+    }
+    ]
+  },
+  {
+  "document_id": "Li и др. - 2018 - A Dual-kernel Spectral-spatial Classification Approach for Hyperspectral Images Based on Mahalanobis.pdf",
+  "text": "In this paper, we propose a new approach to hyperspectral image classification based on Mahalanobis distance metric learning and kernel learning that considers both the features of the spectral bands and a spatial prior. This approach consists of two components. First, we obtain a primary labeled classification result and a posterior probability distribution for each pixel point using a Mahalanobis-kernel-based classifier. In an experimental study, we adopt a support vector machine (SVM) classifier as the kernel classifier to obtain the posterior probabilities using dimensionally reduced data. In the set of experiments reported here, we evaluated the classification accuracy of the proposed approach using the Indian Pines data set (AVIRIS), the Pavia University data set (ROSIS) and data corresponding to the National Mall, Washington, D.C. (HYDICE), which possess various spectral and spatial resolutions reflecting the different environments encountered in remote sensing. In this paper, the overall accuracy (OA), average accuracy (AA) and kappa coefficient (κ) [48] are utilized as evaluation metrics, where OA denotes the number of correctly classified samples divided by the total number of test samples and AA denotes the average of the individual class accuracies. κ includes both omission and commission errors and is thus a more robust measure than OA and AA. AVIRIS Indian Pines Data Set: Fig. 5 compares the classification results obtained using different algorithms in terms of AA and OA. From the figure, we can see that as the number of training samples increases, the AA and OA values increase for all methods with similar trends. Regarding the SAE method, although it considers fused data, it performs the worst on this data set regardless of the parameter values.",
+  "annotations": [
+    {
+      "entity": "hyperspectral image classification",
+      "type": "Task",
+      "start": 8,
+      "end": 11
+    },
+    {
+      "entity": "support vector machine (SVM) ",
+      "type": "Method",
+      "start": 68,
+      "end": 71
+    },
+    {
+      "entity": "Indian Pines",
+      "type": "Datasets",
+      "start": 104,
+      "end": 105
+    },
+    {
+      "entity": "overall accuracy (OA)",
+      "type": "Metric",
+      "start": 144,
+      "end": 146
+    },
+    {
+      "entity": "average accuracy (AA) ",
+      "type": "Metric",
+      "start": 147,
+      "end": 149
+    },
+    {
+      "entity": "kappa coefficient (κ) ",
+      "type": "Metric",
+      "start": 151,
+      "end": 153
+    },
+    {
+      "entity": "SAE",
+      "type": "Method",
+      "start": 254,
+      "end": 254
+    },
+    {
+      "entity": "Mahalanobis-kernel-based classifier",
+      "type": "Method",
+      "start": 59,
+      "end": 60
+    },
+    {
+      "entity": "Pavia University",
+      "type": "Datasets",
+      "start": 110,
+      "end": 111
+    },
+    {
+      "entity": "National Mall, Washington, D.C.",
+      "type": "Datasets",
+      "start": 120,
+      "end": 124
+    },
+    {
+      "entity": "OA",
+      "type": "Metric",
+      "start": 202,
+      "end": 202
+    },
+    {
+      "entity": "AA",
+      "type": "Metric",
+      "start": 204,
+      "end": 204
+    },
+    {
+      "entity": "Indian Pines",
+      "type": "Datasets",
+      "start": 206,
+      "end": 207
+    },
+    {
+      "entity": "OA",
+      "type": "Metric",
+      "start": 225,
+      "end": 225
+    },
+    {
+      "entity": "AA",
+      "type": "Metric",
+      "start": 223,
+      "end": 223
+    },
+    {
+      "entity": "OA",
+      "type": "Metric",
+      "start": 243,
+      "end": 243
+    },
+    {
+      "entity": "AA",
+      "type": "Metric",
+      "start": 241,
+      "end": 241
+    }
+  ]
+},
+{
+  "document_id": "Maffei и др. - 2020 - A Single Model CNN for Hyperspectral Image Denoising.pdf",
+  "text": "To overcome this limitation, this paper considers deep learning models –such as convolutional neural networks (CNNs)– to perform spectral-spatial HSI denoising. The proposed model, called HSI single denosising CNN (HSISDeCNN), efficiently takes into consideration both the spatial and spectral information contained in HSIs. Experimental results on both synthetic and real data demonstrate that the proposed HSI-SDeCNN outperforms other state-of-the-art HSI denoising methods. Training Dataset: In order to train the proposed model, we have selected a part of the Washington DC Mall image acquired by the Hyperspectral Digital Imagery Collection Experiment (HYDICE) airborne sensor. This sensor records 210 spectral bands in the 0.4 to 2.4 µm region of the visible and infrared spectrum. Bands in the 0.9 and 1.4 µm region (in which atmospheric interferers are present) have been removed from the data set, resulting in a total of 191 bands. The size of the Washington DC Mall image is therefore 1208×307×191. The image has been divided into two parts: one is used for training the proposed network and the other is used for testing purposes. For the testing part, we have cropped a region of size 200 × 200 × 191 from the full image (the remaining parts are used for training). In order to evaluate the performance of the proposed approach on the simulated data, three commonly employed metrics have been adopted: MPSNR (mean peak signal-to-noiseratio), MSSIM (mean structural similarity index), and MSA (mean spectral angle). These metrics calculate respectively the average of the PSNR (peak signal-to-noise-ratio), the SSIM (structural similarity index) [43] and the SA (spectral angle) [44] [45] in the spectral domain.", 
+  "annotations": [
+  {
+    "entity": "convolutional neural networks (CNNs)",
+    "type": "Method",
+    "start": 12,
+    "end": 15
+  },
+  {
+    "entity": "spectral-spatial HSI denoising",
+    "type": "Task",
+    "start": 18,
+    "end": 20
+  },
+  {
+    "entity": "HSI single denosising CNN (HSISDeCNN)",
+    "type": "Method",
+    "start": 25,
+    "end": 29
+  },
+  {
+    "entity": "HSI-SDeCNN",
+    "type": "Method",
+    "start": 55,
+    "end": 55
+  },
+  {
+    "entity": "Washington DC Mall",
+    "type": "Datasets",
+    "start": 78,
+    "end": 81
+  },
+  {
+    "entity": "Washington DC Mall",
+    "type": "Datasets",
+    "start": 144,
+    "end": 147
+  },
+  {
+    "entity": "MPSNR (mean peak signal-to-noiseratio)",
+    "type": "Metric",
+    "start": 223,
+    "end": 227
+  },
+  {
+    "entity": "MSSIM (mean structural similarity index)",
+    "type": "Metric",
+    "start": 228,
+    "end": 231
+  },
+  {
+    "entity": "MSA (mean spectral angle)",
+    "type": "Metric",
+    "start": 233,
+    "end": 236
+  },
+  {
+    "entity": "PSNR (peak signal-to-noise-ratio)",
+    "type": "Metric",
+    "start": 245,
+    "end": 247
+  },
+  {
+    "entity": "SSIM (structural similarity index)",
+    "type": "Metric",
+    "start": 249,
+    "end": 252
+  },
+  {
+    "entity": "SA (spectral angle)",
+    "type": "Metric",
+    "start": 256,
+    "end": 258
+  }
+  ]
+  },
+
+    {
+      "document_id": "Liu и др. - 2017 - Active Deep Learning for Classification of Hyperspectral Images.pdf",
+      "text": "The proposed algorithm is applied for the classification of hyperspectral images, and compared with other classification algorithms employing active learning. It is shown that the proposed algorithm is efficient and effective in classifying hyperspectral images. To validate the proposed method, three hyperspectral datasets, PaviaC, PaviaU, and Botswana are used in the experiment. The proposed algorithm, WI-DL, is compared on the test datasets with three other algorithms, namely RS, MUS [18], and QBC [17]. The DBNs used in this paper have four hidden layers. Computational efficiency is considered in selection of number of layers. The initial weights for DBNs are randomly selected between 0 and 1. Each layer of DBNs is based on an RBM. Once RBMs are stacked [1] and trained in a greedy manner, they form a DBN architecture illustrated in Fig. 1. In the unsupervised features learning stage, RBMs learn one layer at a time by the CD method in [15].",
+      "annotations": [
+        {
+          "entity": "classification of hyperspectral images",
+          "type": "Task",
+          "start": 7,
+          "end": 10
+        },
+        {
+          "entity": "active learning",
+          "type": "Method",
+          "start": 18,
+          "end": 19
+        },
+        {
+          "entity": "PaviaC",
+          "type": "Datasets",
+          "start": 43,
+          "end": 43
+        },
+        {
+          "entity": "PaviaU",
+          "type": "Datasets",
+          "start": 44,
+          "end": 44
+        },
+        {
+          "entity": "Botswana",
+          "type": "Datasets",
+          "start": 46,
+          "end": 46
+        },
+        {
+          "entity": "RS",
+          "type": "Method",
+          "start": 67,
+          "end": 67
+        },
+        {
+          "entity": "MUS",
+          "type": "Method",
+          "start": 68,
+          "end": 68
+        },
+        {
+          "entity": "QBC",
+          "type": "Method",
+          "start": 70,
+          "end": 70
+        },
+        {
+          "entity": "DBNs",
+          "type": "Method",
+          "start": 74,
+          "end": 74
+        },
+        {
+          "entity": "DBNs",
+          "type": "Method",
+          "start": 97,
+          "end": 97
+        },
+        {
+          "entity": "RBM",
+          "type": "Method",
+          "start": 113,
+          "end": 113
+        },
+        {
+          "entity": "RBMs",
+          "type": "Method",
+          "start": 115,
+          "end": 115
+        },
+        {
+          "entity": "DBN",
+          "type": "Method",
+          "start": 128,
+          "end": 128
+        },
+        {
+          "entity": "RBMs",
+          "type": "Method",
+          "start": 140,
+          "end": 140
+        }
+      ]
+    },
+    
+  {
+  "document_id": "Hyperspectral Image Classification with Active Learning and Semi-Supervised Learning.pdf",
+  "text": "Random forest (RF) has obtained great success in hyperspectral image (HSI) classification. However, RF cannot leverage its full potential in the case of limited labeled samples. To address this issue, we propose a unified framework that embeds active learning (AL) and semi-supervised learning (SSL) into RF (ASSRF). Our aim is to utilize AL and SSL simultaneously to improve the performance of RF. The objective of the proposed method is to use a small number of manually labeled samples to train classifiers with relative high classification accuracy. To evaluate the performance of the proposed methods, we used three public HSI data sets in our experiments. (1) The Kennedy Space Center (KSC) data was acquired by the NASA Airborne Visible Infrared Imaging Spectrometer sensor over the KSC, Florida, on 23 March 1996. (2) The Pavia University (PaviaU) data was obtained by the Reflective Optics Spectrographic Imaging System over an urban scene by Pavia University, Italy, in 2001. (3) The Botswana (BOT) data was obtained by the NASA Earth Observing-1 satellite over the Okavango Delta, Botswana, on 11 May 2001 Tables 2–4 show the class-specific accuracies, AAs, OAs, and kappa coefficients obtained by the different methods when applied to the KSC, PaviaU, and BOT data sets, respectively. The best results for different method are highlighted in bold",
+  "annotations": [
+    {
+      "entity": "Random forest",
+      "type": "Method",
+      "start": 0,
+      "end": 2
+    },
+    {
+      "entity": "RF",
+      "type": "Method",
+      "start": 13,
+      "end": 13
+    },
+    {
+      "entity": "active learning (AL)",
+      "type": "Method",
+      "start": 37,
+      "end": 39
+    },
+        {
+      "entity": "semi-supervised learning (SSL) ",
+      "type": "Method",
+      "start": 41,
+      "end": 43
+    },
+    {
+      "entity": "ASSRF",
+      "type": "Method",
+      "start": 46,
+      "end": 46
+    },
+    {
+      "entity": "hyperspectral image (HSI) classification",
+      "type": "Task",
+      "start": 8,
+      "end": 11
+    },
+    {
+      "entity": "AL",
+      "type": "Method",
+      "start": 52,
+      "end": 52
+    },
+    {
+      "entity": "SSL",
+      "type": "Method",
+      "start": 54,
+      "end": 54
+    },
+    {
+      "entity": "RF",
+      "type": "Method",
+      "start": 61,
+      "end": 61
+    },
+    {
+      "entity": "Kennedy Space Center (KSC) ",
+      "type": "Datasets",
+      "start": 106,
+      "end": 109
+    },
+    {
+      "entity": "Pavia University (PaviaU) ",
+      "type": "Datasets",
+      "start": 132,
+      "end": 134
+    },
+    {
+      "entity": "The Botswana (BOT) ",
+      "type": "Datasets",
+      "start": 156,
+      "end": 158
+    },
+    {
+      "entity": "class-specific accuracies",
+      "type": "Metric",
+      "start": 181,
+      "end": 182
+    }
+    ,
+    {
+      "entity": "AAs",
+      "type": "Metric",
+      "start": 183,
+      "end": 183
+    }
+    ,
+    {
+      "entity": "OAs",
+      "type": "Metric",
+      "start": 184,
+      "end": 184
+    }
+    ,
+    {
+      "entity": "kappa coefficients",
+      "type": "Metric",
+      "start": 186,
+      "end": 187
+    }
+    ,
+    {
+      "entity": "KSC",
+      "type": "Datasets",
+      "start": 197,
+      "end": 197
+    }
+    ,
+    {
+      "entity": "PaviaU",
+      "type": "Datasets",
+      "start": 198,
+      "end": 198
+    }
+    ,
+    {
+      "entity": "BOT",
+      "type": "Datasets",
+      "start": 200,
+      "end": 200
+    }
+
+  ]
+  }
+
+]
+}
