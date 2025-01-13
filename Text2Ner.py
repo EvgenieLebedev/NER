@@ -70,7 +70,7 @@ def main():
     print(json.dumps(result, ensure_ascii=False, indent=4))
 
     # Опционально, если нужно сохранить результат в файл
-    with open('entities.json', 'w') as f:
+    with open('entities.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
