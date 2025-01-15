@@ -71,4 +71,4 @@ python text.py "Hyperspectral images provide a precise representation of the ear
 python Pdf2Ner.py path/to/your/pdf_file.pdf --output path/to/save/entities.json
 ```
 
-P.S: Не рекомендуется давать слишком большие тексты, поскольку количество мусорных ответов прямопорпоционально объему. Рекомендуемый режим использования -> обработка глав Results или Conclusion или раздела Abstact 
+P.S: requiments.txt  составлены под то, что используется gpu, с cuda-драйверами верссии 11.8
