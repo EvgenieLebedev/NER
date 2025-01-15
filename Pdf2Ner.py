@@ -4,6 +4,8 @@ import re
 import json
 import argparse
 import fitz  # PyMuPDF для работы с PDF
+from fuzzywuzzy import fuzz
+from collections import Counter, defaultdict
 
 # Инициализация модели и токенизатора
 tokenizer = AutoTokenizer.from_pretrained('Kashob/SciBERTNER')
@@ -13,31 +15,25 @@ id2tag = config.id2label
 
 # Функция для извлечения сущностей из текста
 def extract_entities(text):
-    # Разделение текста на сегменты, длина которых не превышает 512 токенов
     max_length = 512
     inputs = tokenizer(text.split(), is_split_into_words=True, return_tensors="pt", truncation=True, padding=True)
 
-    # Если длина последовательности больше 512, разделяем на части
     num_tokens = inputs['input_ids'].shape[1]
     if num_tokens > max_length:
-        #print(f"Текст слишком длинный ({num_tokens} токенов). Разделение на сегменты.")
         chunks = [text[i:i+max_length] for i in range(0, len(text), max_length)]
     else:
         chunks = [text]
 
-    # Обработка всех сегментов
-    entities = {'Material': [], 'Method': [], 'Metric': [], 'Task': []}
+    entities = {'Material': [], 'Method': [], 'Metric': []}
     for chunk in chunks:
         inputs = tokenizer(chunk.split(), is_split_into_words=True, return_tensors="pt")
         with torch.no_grad():
             outputs = model(**inputs)
             predictions = outputs.logits.argmax(-1)
 
-        # Преобразование токенов в текст и предсказания меток
         tokenized_text = tokenizer.convert_ids_to_tokens(inputs['input_ids'].tolist()[0])
         predicted_labels = [id2tag[label_id] for label_id in predictions[0].tolist()]
 
-        # Сбор сущностей по категориям
         current_entity = []
         current_label = None
 
@@ -58,17 +54,47 @@ def extract_entities(text):
         if current_entity and current_label in entities:
             entities[current_label].append(tokenizer.convert_tokens_to_string(current_entity))
 
-    # Очистка текста сущностей
     def clean_entity_text(entity):
         entity = re.sub(r'\s*\(\s*', ' ', entity)
         entity = re.sub(r'\s*\)\s*', ' ', entity)
         entity = re.sub(r'\s*,\s*', ', ', entity)
+        entity = re.sub(r'\[UNK\]', '', entity)  # Remove [UNK] token
         return entity.strip()
 
-    # Убираем дубликаты и создаем финальный вывод
-    flattened_entities = {key: ', '.join(set(map(clean_entity_text, values))) for key, values in entities.items() if values}
-    
+    flattened_entities = {key: list(set(map(clean_entity_text, values))) for key, values in entities.items() if values}
+
     return flattened_entities
+
+# Функция для подсчета упоминаний сущностей в тексте
+def count_entity_occurrences(entities, text):
+    entity_counts = {key: Counter() for key in entities}
+    for category, entity_list in entities.items():
+        for entity in entity_list:
+            entity_counts[category][entity] = text.lower().count(entity.lower())
+    return entity_counts
+
+# Функция для фильтрации сущностей на основе порогов
+def filter_entities(entity_counts, thresholds):
+    filtered_entity_counts = {}
+    for category, counts in entity_counts.items():
+        min_count, max_count = thresholds[category]
+        filtered_entity_counts[category] = {entity: count for entity, count in counts.items() if min_count <= count <= max_count}
+    return filtered_entity_counts
+
+# Функция для объединения похожих сущностей
+def merge_similar_entities(entities, threshold=60):
+    combined_entities = defaultdict(int)
+    for key, value in entities.items():
+        matched = False
+        for combined_key in list(combined_entities.keys()):
+            if fuzz.ratio(key, combined_key) > threshold:
+                combined_entities[combined_key] += value
+                matched = True
+                break
+        if not matched:
+            combined_entities[key] += value
+    return dict(combined_entities)
+
 
 # Функция для извлечения текста из PDF
 def extract_text_from_pdf(pdf_path):
@@ -83,20 +109,32 @@ def main():
     # Создаем парсер аргументов
     parser = argparse.ArgumentParser(description="Извлечение сущностей из текста PDF файла с использованием модели SciBERTNER.")
     parser.add_argument("pdf_file", type=str, help="Путь к PDF файлу для извлечения сущностей")
+    parser.add_argument("--output", type=str, default="entities.json", help="Путь для сохранения результатов")
     args = parser.parse_args()
 
     # Извлекаем текст из PDF файла
     text = extract_text_from_pdf(args.pdf_file)
 
-    # Извлекаем сущности
-    result = extract_entities(text)
+    entities = extract_entities(text)
+    entity_counts = count_entity_occurrences(entities, text)
 
-    # Печать результатов
-    print(json.dumps(result, ensure_ascii=False, indent=4))
+    # Пороги для фильтрации
+    thresholds = {
+    'Material': (3, 25),
+    'Method': (5, 100),
+    'Metric': (5, 40)
+    }
+
+    # Фильтрация сущностей на основе порогов
+    filtered_entity_counts = filter_entities(entity_counts, thresholds)
+
+    # Объединение похожих сущностей
+    merged_entity_counts = {category: merge_similar_entities(counts, threshold=60) for category, counts in filtered_entity_counts.items()}
+
 
     # Опционально, если нужно сохранить результат в файл
-    with open('entities.json', 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=4)
+    with open(args.output, 'w', encoding='utf-8') as f:
+        json.dump(merged_entity_counts, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
     main()
