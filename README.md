@@ -11,10 +11,48 @@
 ```json
 
 {
-    "Material": "salinas dataset, indian pines",
-    "Method": "3 - d convolutional neural networks, prclstm, prclstm model",
-    "Metric": "aa, oa, kappa coefficient, average accuracy, te, overall accuracy, test error",
-    "Task": "3 - d structural processing, spectral - spatial classification of hyperspectral imageries hsi"
+    "Material": {
+        "hsi data": 16,
+        "training and testing samples": 3,
+        "university": 8,
+        "paviau dataset": 3,
+        "hyperspectral data": 12,
+        "indian pines": 26,
+        "lett": 9
+    },
+    "Method": {
+        "recurrent analysis": 49,
+        "svm": 17,
+        "cnn2": 115,
+        "pca": 55,
+        "prclstm": 112,
+        "convolutional neural network": 51,
+        "neural net": 37,
+        "framework": 11,
+        "dimensionality": 7,
+        "rnn": 21,
+        "dropout": 7,
+        "methods": 23,
+        "emp": 7,
+        "deep learning": 8,
+        "deep": 21,
+        "clstm layer": 7,
+        "bn": 16,
+        "rf": 38
+    },
+    "Metric": {
+        "stm validation loss": 34,
+        "average": 6,
+        "loss": 22,
+        "κ": 11,
+        "computational": 25,
+        "oa": 23,
+        "dimensionality": 7,
+        "accuracy": 11,
+        "dropout": 7,
+        "aa": 10,
+        "statistical": 8
+    }
 }
 
 ```
@@ -30,8 +68,7 @@ python text.py "Hyperspectral images provide a precise representation of the ear
 ```
 
 ```cmd
-
-python  Pdf2Ner.py "De Backer и др. - 2005 - A Band Selection Technique for Spectral Classification.pdf"
-
+python Pdf2Ner.py path/to/your/pdf_file.pdf --output path/to/save/entities.json
 ```
+
 P.S: Не рекомендуется давать слишком большие тексты, поскольку количество мусорных ответов прямопорпоционально объему. Рекомендуемый режим использования -> обработка глав Results или Conclusion или раздела Abstact 
